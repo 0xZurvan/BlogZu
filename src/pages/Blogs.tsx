@@ -1,6 +1,6 @@
 import { shallow } from "zustand/shallow";
 import BlogCard from "../components/BlogCard";
-import { useBlogStore, BlogData } from "../stores/useBlogStore";
+import { useBlogStore } from "../stores/useBlogStore";
 import { useEffect } from "react";
 
 export default function Blogs() {
@@ -31,6 +31,7 @@ export default function Blogs() {
                   title={blog.title}
                   content={blog.content}
                   category={blog.category}
+                  to={`/blogs/${blog.id}`}
                 />
               </div>
             )

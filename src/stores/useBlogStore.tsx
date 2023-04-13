@@ -62,7 +62,6 @@ export const useBlogStore = create<Blog>()((set, get) => ({
       set((state) => ({
         blogs: { ...state.blogs, ...Object.fromEntries(_data.map((d) => [d.id, d])) },
       })); 
-      console.log(get().blogs);
     } catch (error) {
       console.error(error);
     }

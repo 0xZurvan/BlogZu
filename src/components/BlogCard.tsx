@@ -1,13 +1,15 @@
 
-interface blogCardProps {
+import { Link } from "react-router-dom";
+interface BlogCardProps {
   author: string;
   img: string;
   title: string;
   content: string;
   category: "tutorial" | "article";
+  to: string;
 }
 
-export default function BlogCard({author, img, title, category, content}: blogCardProps) {
+export default function BlogCard({author, img, title, category, content, to}: BlogCardProps) {
   return (
     <div>
       <article className="p-6 rounded-lg border shadow-md bg-gray-800 border-gray-700">
@@ -17,7 +19,7 @@ export default function BlogCard({author, img, title, category, content}: blogCa
           </span>
         </div>
         <h2 className="mb-2 text-2xl font-bold tracking-tight text-white">
-          <a href="#">{title}</a>
+          <Link to={to}>{title}</Link>
         </h2>
         <p className="mb-5 line-clamp-4 font-light text-gray-400">
           {content}
