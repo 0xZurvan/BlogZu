@@ -36,22 +36,22 @@ export default function Blog() {
 
   return (
     <div className="max-w-screen-xl flex flex-col items-start flex-wrap mx-auto space-y-10 my-10">
-      <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+      <div className="inline-flex items-center mr-3 text-sm text-white">
         <img
           className="mr-4 w-16 h-16 rounded-full"
           src={blog.img}
           alt={blog.author}
         />
         <div>
-          <p className="text-xl font-bold text-gray-900 dark:text-white">
+          <p className="text-xl font-bold text-white">
             {blog.author}
           </p>
         </div>
       </div>
-      <h1 className="max-w-2xl mb-4 text-2xl text-start font-extrabold tracking-tight leading-none md:text-5xl xl:text-5xl dark:text-white">
+      <h1 className="max-w-2xl mb-4 text-2xl text-start font-extrabold tracking-tight leading-none md:text-5xl xl:text-5xl text-white">
         {blog.title}
       </h1>
-      <p className="my-5 w-[800px] font-normal text-gray-300">{blog.content}</p>
+      <p className="my-5 max-w-sm xl:max-w-2xl font-normal text-gray-300">{blog.content}</p>
     </div>
   );
 }

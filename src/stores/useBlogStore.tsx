@@ -1,6 +1,8 @@
 import { create } from "zustand";
 import {
   addDoc,
+  deleteDoc,
+  doc,
   collection,
   serverTimestamp,
   getDocs,
@@ -28,7 +30,7 @@ interface Blog {
     category: string
   ) => Promise<void>;
   readBlog: () => void;
-  deleteBlog: () => void;
+  deleteBlog: (docId: string) => void;
   updateBlog: () => void;
 }
 
@@ -66,6 +68,13 @@ export const useBlogStore = create<Blog>()((set, get) => ({
       console.error(error);
     }
   },
-  deleteBlog: async () => {},
+  deleteBlog: async (docId: string) => {
+    try {
+      const docRef = doc(db, "blogs", docId);
+      await deleteDoc(docRef);
+    } catch (error) {
+      console.error(error);
+    }
+  },
   updateBlog: async () => {},
 }));
